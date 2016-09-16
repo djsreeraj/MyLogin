@@ -58,5 +58,6 @@
         android:id="@+id/button"
         android:layout_below="@+id/password"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="47dp" />
+        android:layout_marginTop="47dp"
+        android:onClick="btnLogin" />
 </RelativeLayout>
