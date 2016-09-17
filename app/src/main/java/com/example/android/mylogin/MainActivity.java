@@ -9,8 +9,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    EditText username, password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +34,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnLogin(View view) {
-        Intent intent = new Intent(this, Login.class);
-        startActivity(intent);
+
+        username = (EditText) findViewById(R.id.userName);
+        password = (EditText) findViewById(R.id.password);
+
+        String uname = username.getText().toString();
+        String pass = password.getText().toString();
+
+        if (uname.equals("") || pass.equals("")) {
+            Toast.makeText(this, "Enter Valid inputs", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, " Valid inputs", Toast.LENGTH_SHORT).show();
+            LoginBackground loginBackground = new LoginBackground(this);
+            loginBackground.execute(uname, pass);
+        }
+
     }
 
     public void btnRegister(View view) {
@@ -45,5 +62,4 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-
 }
