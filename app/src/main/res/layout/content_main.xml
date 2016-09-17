@@ -11,7 +11,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.android.mylogin.MainActivity"
     tools:showIn="@layout/activity_main"
-    android:background="@drawable/city">
+    android:background="@drawable/bgmap">
 
     TextView
         android:layout_width="wrap_content"
@@ -26,26 +26,28 @@
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="106dp" />
+        android:layout_marginTop="106dp"
+        android:textSize="40dp" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/userName"
+        android:ems="10"
         android:hint="Enter username"
-        android:textSize="20dp"
+        android:textSize="22dp"
         android:layout_below="@+id/textView"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="53dp"
-        android:textColor="#ffffff"
-        android:textColorHint="#fff" />
+        android:textColor="#1f91ca"
+        android:textColorHint="#330d0d"
+        android:background="#47f7db6e" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
-        android:ems="10"
         android:id="@+id/password"
         android:hint="Enter Password"
         android:textSize="20dp"
@@ -53,15 +55,44 @@
         android:layout_below="@+id/userName"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:textColorHint="#fff" />
+        android:textColor="#1f91ca"
+        android:textColorHint="#330d0d" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign in"
         android:id="@+id/button"
+        android:layout_marginTop="34dp"
+        android:onClick="btnLogin"
         android:layout_below="@+id/password"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="47dp"
-        android:onClick="btnLogin" />
+        android:layout_toRightOf="@+id/textView2"
+        android:layout_toEndOf="@+id/textView2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Not a user yet....."
+        android:id="@+id/textView2"
+        android:textColor="#330d0d"
+        android:textSize="15dp"
+        android:layout_below="@+id/button"
+        android:layout_toStartOf="@+id/btnRegister"
+        android:layout_marginTop="11dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Register Now"
+        android:id="@+id/btnRegister"
+        android:textColor="#c24191"
+        android:onClick="btnRegister"
+        android:clickable="true"
+        android:layout_marginLeft="28dp"
+        android:layout_marginStart="35dp"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView" />
+
 </RelativeLayout>
