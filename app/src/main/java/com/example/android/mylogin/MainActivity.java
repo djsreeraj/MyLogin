@@ -42,9 +42,13 @@ public class MainActivity extends AppCompatActivity {
         String pass = password.getText().toString();
 
         if (uname.equals("") || pass.equals("")) {
-            Toast.makeText(this, "Enter Valid inputs", Toast.LENGTH_SHORT).show();
+
+            Toast.makeText(this, "Enter any input", Toast.LENGTH_SHORT).show();
+
         } else {
-            Toast.makeText(this, " Valid inputs", Toast.LENGTH_SHORT).show();
+
+            // Toast.makeText(this, " Valid inputs", Toast.LENGTH_SHORT).show();
+
             LoginBackground loginBackground = new LoginBackground(this);
             loginBackground.execute(uname, pass);
         }
